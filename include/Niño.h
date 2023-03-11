@@ -15,6 +15,7 @@ class Niño {
         std::vector<Objeto> ObjetosPrestados;
    
     public:
+        Niño(string, int, string, string)
         std::string listarObjetosPrestados();
 };
 

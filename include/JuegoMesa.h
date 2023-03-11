@@ -11,6 +11,9 @@ class JuegoMesa: public Objeto {
         int CantJugadores;
 
     public:
+        std::string getNombre();
+        int getAnio();
+        JuegoMesa(int, int);
         std::string toString();
 };
 
