@@ -10,8 +10,9 @@ class Libro: public Objeto {
         int CantPaginas;
 
     public:
+        Libro();
         Libro(string, int);
-        std::string toString();
+        virtual std::string toString();
 };
 
 #endif

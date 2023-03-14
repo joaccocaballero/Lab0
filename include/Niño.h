@@ -12,11 +12,12 @@ class Niño {
         int Edad;
         std::string Direccion;
         std::string Telefono;
-        std::vector<Objeto> ObjetosPrestados;
-   
+        Objeto *objs[MAX_OBJETOS];
+        int tope;
     public:
         Niño(string, int, string, string);
-        std::string listarObjetosPrestados();
+        void addObjeto(Objeto);
+        std::string *listarObjetosPrestados();
 };
 
 #endif

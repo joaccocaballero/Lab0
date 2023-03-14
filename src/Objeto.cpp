@@ -18,3 +18,7 @@ Objeto::getAnio() {
 Objeto::getEstado() {
     return this->Estado;
 }
+
+Objeto::~Objeto() {
+    delete niño;
+}

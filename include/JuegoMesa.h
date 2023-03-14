@@ -9,12 +9,12 @@ class JuegoMesa: public Objeto {
     private: 
         int EdadRecomendada;
         int CantJugadores;
-
     public:
         std::string getNombre();
         int getAnio();
-        JuegoMesa(int, int);
-        std::string toString();
+        Estado getEstado();
+        JuegoMesa(int, int, string, int);
+        virtual std::string toString();
 };
 
 #endif
