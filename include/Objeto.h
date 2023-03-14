@@ -12,7 +12,7 @@ class Objeto {
         Estado estado;
         Niño *niño;
     public:
-        Objeto(string, int);
+        Objeto(string, int, Estado);
         virtual std::string toString() = 0;
         string getNombre();
         int getAnio();

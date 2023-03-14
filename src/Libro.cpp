@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 #include "../include/Libro.h"
-//falta agregar objeto.h ?
+#include "../include/Objeto.h"
 
-Libro::Libro(string Autor , int CantPaginas, string nombre, int anio): Objeto(nombre, anio) {
+Libro::Libro(string Autor , int CantPaginas, string nombre, int anio, Estado estado): Objeto(nombre, anio, estado) {
     this->Autor = Autor;
     this->CantPaginas = CantPaginas;
 }
