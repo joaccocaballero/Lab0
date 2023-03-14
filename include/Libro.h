@@ -10,7 +10,7 @@ class Libro: public Objeto {
         int CantPaginas;
 
     public:
-        Libro(string, int)
+        Libro(string, int);
         std::string toString();
 };
 
