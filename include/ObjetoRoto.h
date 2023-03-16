@@ -8,7 +8,7 @@ class DTObjetoRoto {
         bool Prestado;
         std::string NombreNinio;
     public:
-        DTObjetoRoto(string, bool, string);
+        DTObjetoRoto(std::string, bool, std::string);
 }
 
 #endif

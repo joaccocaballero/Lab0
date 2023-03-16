@@ -11,7 +11,7 @@ class Libro: public Objeto {
 
     public:
         Libro();
-        Libro(string, int);
+        Libro(std::string, int);
         virtual std::string toString();
 };
 

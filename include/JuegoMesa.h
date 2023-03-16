@@ -5,7 +5,7 @@
 
 #include "Objeto.h"
 
-class JuegoMesa: public Objeto {
+class JuegoMesa : public Objeto {
     private: 
         int EdadRecomendada;
         int CantJugadores;
@@ -13,7 +13,7 @@ class JuegoMesa: public Objeto {
         std::string getNombre();
         int getAnio();
         Estado getEstado();
-        JuegoMesa(int, int, string, int);
+        JuegoMesa(int, int, std::string, int);
         virtual std::string toString();
 };
 

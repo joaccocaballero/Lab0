@@ -1,18 +1,15 @@
-#include <stdlib>
-#include <string>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 
-#include 'Objeto.h'
-#include 'Niño.h'
-#include 'Objeto.h'
-#include 'JuegoMesa.h'
-#include 'DTObjetoRoto.h'
-#include 'Libro.h'
+#include "./include/JuegoMesa.h"
+#include "./include/Libro.h"
+#include "./include/Ninio.h"
+#include "./include/Objeto.h"
+#include "./include/ObjetoRoto.h" 
+
 
 int main() {
-    Objeto objetos = Objeto [25] //cambiar ctd objetos
-    Libro l1 = Libro('Brandon Sanderson',688, 'Nacidos de la bruma: El imperio final', 2022, Roto)
-    cout << l1.toString() <<
-
+    std::cout << "Hellow World" << std::endl;
     return 0;
 } 
