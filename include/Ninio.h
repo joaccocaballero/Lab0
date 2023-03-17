@@ -1,6 +1,7 @@
 #include <iostream>
+#include <set>
 #include <string>
-#include <vector>
+
 
 #include "Objeto.h"
 #ifndef NINIO
@@ -13,7 +14,7 @@ class Ninio {
         int Edad;
         std::string Direccion;
         std::string Telefono;
-        Objeto arregloObjetos[MAX_OBJETOS];
+        std::SET<Objeto*> ObjetosPrestados;
         int tope;
     public:
         Ninio(std::string, int, std::string, std::string);

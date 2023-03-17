@@ -16,7 +16,7 @@ class Objeto {
         Estado estado;
         Ninio *ninio;
     public:
-        Objeto(std::string, int, Estado);
+        Objeto(std::string Nombre, int anio, Estado estado);
         virtual std::string toString() = 0;
         std::string getNombre();
         int getAnio();
