@@ -2,7 +2,7 @@
 #include <string>
 #include "../include/JuegoMesa.h"
 
-JuegoMesa::JuegoMesa(int EdadRecomendada, int CantJugadores, std::string nombre, int anio): Objeto(nombre, anio) {
+JuegoMesa::JuegoMesa(int EdadRecomendada, int CantJugadores, Estado estado std::string nombre, int anio): Objeto(nombre, anio, estado) {
     this->EdadRecomendada = EdadRecomendada;
     this->CantJugadores = CantJugadores;
 }
