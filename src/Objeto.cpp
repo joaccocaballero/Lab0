@@ -2,9 +2,10 @@
 
 #include <string>
 
-Objeto::Objeto(string nombre, int anio){
+Objeto::Objeto(string nombre, int anio, Estado estado){
     this->Nombre = nombre;
     this->Anio = anio;
+    this->Estado = estado;
 }
 
 Objeto::getNombre() {
@@ -20,5 +21,5 @@ Objeto::getEstado() {
 }
 
 Objeto::~Objeto() {
-    delete niño;
+    delete PrestadoA;
 }

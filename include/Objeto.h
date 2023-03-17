@@ -1,7 +1,8 @@
-
-#include <string>
+#pragma once
 #ifndef Objeto
 #define Objeto
+
+#include <string>
 
 #include "Ninio.h"
 

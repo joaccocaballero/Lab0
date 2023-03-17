@@ -1,6 +1,8 @@
-#include <string>
+
 #ifndef DTObjetoRoto
 #define DTObjetoRoto
+
+#include <string>
 
 class DTObjetoRoto {
     private:

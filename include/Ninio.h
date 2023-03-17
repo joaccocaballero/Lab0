@@ -1,10 +1,10 @@
+#pragma once
+#ifndef NINIO
+#define NINIO
+
 #include <iostream>
 #include <set>
 #include <string>
-
-#include "Objeto.h"
-#ifndef NINIO
-#define NINIO
 
 class Objeto;
 
@@ -21,5 +21,6 @@ class Ninio {
         void addObjeto(Objeto);
         std::string *listarObjetosPrestados();
 };
+#include "Objeto.h"
 
 #endif

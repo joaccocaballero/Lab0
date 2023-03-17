@@ -1,7 +1,8 @@
 
-#include <string>
 #ifndef LIBRO
 #define LIBRO
+
+#include <string>
 #include "Objeto.h"
 
 class Libro: public Objeto {

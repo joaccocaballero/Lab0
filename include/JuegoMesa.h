@@ -1,7 +1,8 @@
 
-#include <string>
+
 #ifndef JUEGOMESA
 #define JUEGOMESA
+#include <string>
 
 #include "Objeto.h"
 
