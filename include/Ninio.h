@@ -15,12 +15,12 @@ class Ninio {
         std::string Direccion;
         std::string Telefono;
         std::set<Objeto*> ObjetosPrestados;
-        int tope;
     public:
-        Ninio(std::string, int, std::string, std::string);
-        void addObjeto(Objeto);
-        std::string *listarObjetosPrestados();
+        Ninio(std::string Nombre, int Edad, std::string Direccion, std::string Telefono);
+        void addObjeto(Objeto*);
+        std::set<std::string> *listarObjetosPrestados();
 };
+
 #include "Objeto.h"
 
 #endif

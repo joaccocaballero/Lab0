@@ -11,6 +11,9 @@ class DTObjetoRoto {
         std::string NombreNinio;
     public:
         DTObjetoRoto(std::string NombreObjeto, bool Prestado, std::string NombreNinio);
+        std::string getNombre();
+        bool enPrestamo();
+        std::string getNinioPrestado();
 }
 
 #endif

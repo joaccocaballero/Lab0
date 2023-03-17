@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <set>
 #include "../include/Ninio.h"
 #include "../include/Objeto.h"
 
@@ -8,18 +9,17 @@ Ninio:: Ninio(std::string Nombre, int Edad, std::string Direccion, std::string T
     this->Edad= Edad;
     this->Direccion= Direccion;
     this->Telefono= Telefono;
-    this->tope = 0;
 }
 
 void Ninio::addObjeto(Objeto objeto) {
-    arregloObjetos[tope+1] = objeto;
-    tope++;
+    ObjetosPrestados.insert(objeto);
 }
 
 string Ninio::listarObjetosPrestados() {
-    std::string *res = std::string[this->tope];
-    for ( int i = 0; i < this->tope; i++) {
-        res[i] = this->arregloObjetos[i].toString();
+    std::set<std::string> listaObjetos;
+    for (Objeto*it= ObjetosPrestados.begin(); it != ObjetosPrestados.end() ; ++it) {
+        Objeto* o = *it;
+        listaObjetos.insert(o->toString());
     }
-    return res;
+    return listaObjetos;
 }

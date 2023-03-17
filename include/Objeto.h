@@ -19,7 +19,6 @@ class Objeto {
         virtual std::string toString() = 0;
         std::string getNombre();
         int getAnio();
-        void addNinio();
         Estado getEstado();
         ~Objeto();
 };

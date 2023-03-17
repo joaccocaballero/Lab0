@@ -2,10 +2,10 @@
 
 #include <string>
 
-Objeto::Objeto(string nombre, int anio, Estado estado){
+Objeto::Objeto(std::string Nombre, int anio, Estado estado){
     this->Nombre = nombre;
-    this->Anio = anio;
-    this->Estado = estado;
+    this->anio = anio;
+    this->estado = estado;
 }
 
 Objeto::getNombre() {
