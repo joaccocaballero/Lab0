@@ -2,11 +2,11 @@
 #include <set>
 #include <string>
 
-
 #include "Objeto.h"
 #ifndef NINIO
 #define NINIO
 
+class Objeto;
 
 class Ninio {
     private:
@@ -14,7 +14,7 @@ class Ninio {
         int Edad;
         std::string Direccion;
         std::string Telefono;
-        std::SET<Objeto*> ObjetosPrestados;
+        std::set<Objeto*> ObjetosPrestados;
         int tope;
     public:
         Ninio(std::string, int, std::string, std::string);

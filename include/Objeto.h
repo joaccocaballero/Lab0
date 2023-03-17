@@ -5,8 +5,6 @@
 
 #include "Ninio.h"
 
-const int MAX_OBJETOS = 50;
-
 enum Estado { Nuevo, Bien_Conservado, Roto };
 
 class Objeto {
@@ -14,7 +12,7 @@ class Objeto {
         std::string Nombre;
         int anio;
         Estado estado;
-        Ninio *ninio;
+        Ninio *PrestadoA;
     public:
         Objeto(std::string Nombre, int anio, Estado estado);
         virtual std::string toString() = 0;
