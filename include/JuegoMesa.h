@@ -15,7 +15,7 @@ class JuegoMesa : public Objeto {
         std::string getNombre();
         int getAnio();
         Estado getEstado();
-
+        ~JuegoMesa();
         virtual std::string toString();
 };
 

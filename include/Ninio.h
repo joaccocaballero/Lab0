@@ -19,6 +19,7 @@ class Ninio {
         Ninio(std::string Nombre, int Edad, std::string Direccion, std::string Telefono);
         void addObjeto(Objeto*);
         std::set<std::string> *listarObjetosPrestados();
+        ~Ninio();
 };
 
 #include "Objeto.h"
