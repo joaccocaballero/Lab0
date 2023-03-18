@@ -19,3 +19,5 @@ bool enPrestamo(){
 std::string getNinioPrestado(){
     return this->NombreNinio
 }
+
+DTObjetoRoto::~DTObjetoRoto(){}
