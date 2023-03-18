@@ -12,3 +12,7 @@ Libro::toString() {
     return 'Libro: ' + getNombre() + ', Año Comprado: ' + getAnio()
          + ', Estado: ' + getEstado() + ', Autor: ' + this->Autor + ', CantPaginas' + this->CantPaginas; 
 }
+
+Libro::~Libro(){
+    ~Objeto();
+}
