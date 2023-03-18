@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <set>
 
 #include "./include/JuegoMesa.h"
 #include "./include/Libro.h"
