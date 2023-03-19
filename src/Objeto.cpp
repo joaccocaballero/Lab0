@@ -24,6 +24,10 @@ Objeto::addNinio(Ninio *ninio) {
     this->PrestadoA = ninio;
 }
 
+Objeto::getPrestado(){
+    return this->PrestadoA
+}
+
 Objeto::~Objeto() {
     delete PrestadoA;
 }

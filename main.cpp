@@ -12,7 +12,9 @@
 
 int main() {
     
-    std::set<std::Objeto*> conjuntoObjetos;
+    std::set<Objeto*> conjuntoObjetos;
+    std:set<DTObjetoRoto*> conjuntoObjetosRotos;
+    std::set<Ninio*> conjuntoNiños;
     
     Libro *l1 = new Libro("Nacidos en la bruma: El imperio final", 2022, Roto,"Brandon Senderson", 688);
     conjuntoObjetos.insert(l1);
@@ -38,7 +40,9 @@ int main() {
     
     Ninio *n1 = new Ninio("María Laura",10,"Nueva Palmira 1521","Nueva Palmira 1521");
     Ninio *n2 = new Ninio("Alex",5,"Humberto Primo 1501","29094141");
-    
+    conjuntoNiños.insert(n1);
+    conjuntoNiños.insert(n2);
+
     n1->addObjeto(j2);
     j2->addNinio(n1);
     n1->addObjeto(l1);
@@ -54,10 +58,24 @@ int main() {
     std::set<std::string> objetosN1 = n1->listarObjetosPrestados();
     std::set<std::string> objetosN2 = n2->listarObjetosPrestados();
 
-    DTObjetoRoto l1Roto = DTObjetoRoto(l1->getNombre(), true, n1->getNombre());
+    for (Objeto *it = conjuntoObjetos.begin(); it != conjuntoObjetos.end(); ++it) {
+      Objeto *o = *it;
+        if(o->getEstado() == Roto){
+            std::string nombreObjeto = o->getNombre();
+            bool esPrestado = false;
+            std::string nombreNinio = '';
+            if(o->getPrestamo() != null){
+                esPrestado = true;
+                nombreNinio = o->getPrestado()->getNombre();
+            }
+            DTObjetoRoto obj = DTObjetoRoto(nombreObjeto, esPrestado, nombreNinio)
+            conjuntoObjetosRotos.insert(obj)
+        }
+    }
+    /*DTObjetoRoto l1Roto = DTObjetoRoto(l1->getNombre(), true, n1->getNombre());
     DTObjetoRoto l3Roto = DTObjetoRoto(l3->getNombre(), true, n2->getNombre());
     DTObjetoRoto j1Roto = DTObjetoRoto(j1->getNombre(), true, n2->getNombre());
-    DTObjetoRoto j1Roto = DTObjetoRoto(j1->getNombre(), true, n2->getNombre());
+    DTObjetoRoto j1Roto = DTObjetoRoto(j1->getNombre(), true, n2->getNombre());*/
 
     return 0;
 } 
