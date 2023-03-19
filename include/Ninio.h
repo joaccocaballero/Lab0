@@ -1,4 +1,9 @@
 #pragma once
+
+#ifndef Objeto
+class Objeto;
+#endif
+
 #ifndef NINIO
 #define NINIO
 
@@ -6,7 +11,6 @@
 #include <set>
 #include <string>
 
-class Objeto;
 
 class Ninio {
     private:
@@ -21,7 +25,5 @@ class Ninio {
         std::set<std::string> *listarObjetosPrestados();
         ~Ninio();
 };
-
-#include "Objeto.h"
 
 #endif
