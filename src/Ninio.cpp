@@ -25,13 +25,7 @@ string Ninio::listarObjetosPrestados() {
 }
 
 Ninio ::~Ninio(){
-    listarObjetosPrestados.clear()
-    delete listarObjetosPrestados;
-  /*  for (Objeto it = ObjetosPrestados.begin(); it = ObjetosPrestados.end(); ++it){
-        Objeto* o= *it;
-        listaObjetos.erase(o)
-    }
-    
-    delete listarObjetosPrestados;*/
+    ObjetosPrestados.clear();
+    delete ObjetosPrestados;
 }
 
