@@ -36,5 +36,9 @@ std::string Objeto::getPrestado(){
 }
 
 Objeto::~Objeto() {
-    delete PrestadoA;
+    if (PrestadoA != NULL) {
+        std::cout << "adentro" << std::endl;
+        PrestadoA->borrarLink(this);
+        delete PrestadoA;
+    }
 }

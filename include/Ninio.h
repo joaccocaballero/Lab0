@@ -20,6 +20,7 @@ class Ninio {
         Ninio(std::string Nombre, int Edad, std::string Direccion, std::string Telefono);
         void addObjeto(Objeto*);
         std::string getNombre();
+        void borrarLink(Objeto*);
         std::vector<std::string> listarObjetosPrestados();
         ~Ninio();
 };

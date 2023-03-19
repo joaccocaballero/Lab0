@@ -34,5 +34,5 @@ void Libro::addNinio(Ninio *ninio){
 }
 
 Libro::~Libro() {
-
+  Objeto::~Objeto();
 }

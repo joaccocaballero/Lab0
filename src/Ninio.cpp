@@ -28,6 +28,10 @@ std::vector<std::string> Ninio::listarObjetosPrestados() {
     return listaObjetos;
 }
 
+void Ninio::borrarLink(Objeto *obj) {
+    ObjetosPrestados.erase(obj);
+}
+
 std::string Ninio::getNombre() {
     return Nombre;
 }
