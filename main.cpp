@@ -41,6 +41,7 @@ int main() {
     
     Ninio *n1 = new Ninio("María Laura",10,"Nueva Palmira 1521","Nueva Palmira 1521");
     Ninio *n2 = new Ninio("Alex",5,"Humberto Primo 1501","29094141");
+
     conjuntoNinios.insert(n1);
     conjuntoNinios.insert(n2);
 
@@ -59,29 +60,30 @@ int main() {
     std::vector<std::string> objetosN1 = n1->listarObjetosPrestados();
     std::vector<std::string> objetosN2 = n2->listarObjetosPrestados();
 
-    for (Objeto *it = *conjuntoObjetos.begin(); it != *conjuntoObjetos.end(); it++) {
-        if(it->getEstado() == Roto){
-            std::string nombreObjeto = it->getNombre();
+    for (auto it = conjuntoObjetos.begin(); it != conjuntoObjetos.end(); it++) {
+        Objeto *o = *it;
+        if (o->getEstado() == Roto) {
+            std::string nombreObjeto = o->getNombre();
             bool esPrestado = false;
-            if(it->getPrestado() != " "){
-                esPrestado = true;
+            if (o->getPrestado() != " ") {
+            esPrestado = true;
             }
-            DTObjetoRoto obj = DTObjetoRoto(nombreObjeto, esPrestado, it->getPrestado());
+            DTObjetoRoto obj =
+                DTObjetoRoto(nombreObjeto, esPrestado, o->getPrestado());
             conjuntoObjetosRotos.push_back(obj);
-        }
+            }
     }
-    /*DTObjetoRoto l1Roto = DTObjetoRoto(l1->getNombre(), true, n1->getNombre());
-    DTObjetoRoto l3Roto = DTObjetoRoto(l3->getNombre(), true, n2->getNombre());
-    DTObjetoRoto j1Roto = DTObjetoRoto(j1->getNombre(), true, n2->getNombre());
-    DTObjetoRoto j1Roto = DTObjetoRoto(j1->getNombre(), true, n2->getNombre());*/
+/*
+    std::cout << "LISTA OBJETOS PRESTADO NIÑO 1:" << std::endl;
+    for (auto it = objetosN1.begin(); it!= objetosN1.end(); it++){
+        std::cout << *it << std::endl;
+    }
 
+    std::cout << "LISTA OBJETOS PRESTADO NIÑO 2:" << std::endl;
+    for (auto it = objetosN2.begin(); it != objetosN2.end(); it++) {
+        std::cout << *it << std::endl;
+    }
+*/
     return 0;
 } 
 
-
-/*
-Nombre = Alex
-Edad = 5
-Dirección = Humberto Primo 1501
-Teléfono = 29094141
-*/

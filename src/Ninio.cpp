@@ -20,8 +20,10 @@ void Ninio::addObjeto(Objeto *objeto) {
 
 std::vector<std::string> Ninio::listarObjetosPrestados() {
     std::vector<std::string> listaObjetos;
-    for (Objeto* it= *ObjetosPrestados.begin(); it != *ObjetosPrestados.end() ; ++it) {
-        listaObjetos.push_back(it->toString());
+    
+    for (auto it = ObjetosPrestados.begin(); it != ObjetosPrestados.end() ; ++it) {
+        Objeto *o = *it;
+        listaObjetos.push_back(o->toString());
     }
     return listaObjetos;
 }

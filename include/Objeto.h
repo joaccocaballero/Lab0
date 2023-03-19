@@ -18,10 +18,10 @@ class Objeto {
         virtual std::string toString() = 0;
         std::string getNombre();
         int getAnio();
-        Estado getEstado();
+        virtual Estado getEstado();
         std::string getPrestado();
         void setPrestado(Ninio*);
-        virtual void addNinio(Ninio*);
+        virtual void addNinio(Ninio*) = 0;
         virtual ~Objeto();
 };
 

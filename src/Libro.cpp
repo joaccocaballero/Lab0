@@ -9,10 +9,23 @@ Libro::Libro(std::string nombre , int anio, Estado estado, std::string autor, in
 }
 
 std::string Libro::toString() {
+    int posEstado = getEstado();
+    std::string estado;
+    switch (posEstado) {
+      case 0:
+        estado = "Nuevo";
+        break;
+      case 1:
+        estado = "Bien Conservado";
+        break;
+      case 2:
+        estado = "Roto";
+        break;
+    }
     return "Libro: " + getNombre() +
            ", Año Comprado: " + std::to_string(getAnio()) +
-           ", Estado: " + std::to_string(getEstado()) +
-           ", Autor: " + this->Autor + ", CantPaginas" +
+           ", Estado: " + estado +
+           ", Autor: " + this->Autor + ", CantPaginas: " +
            std::to_string(this->CantPaginas);
 }
 

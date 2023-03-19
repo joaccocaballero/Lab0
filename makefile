@@ -1,28 +1,32 @@
-CC=g++
-CFLAGS=-I./include/*.h
+# Nombre del programa
+PROG = programa
 
-main.o: main.cpp
-	$(CC) $(CFLAGS) -c main.cpp -o main.o
+# Compilador y banderas de compilación
+CXX = g++
+CXXFLAGS = -Wall -Wextra -pedantic -std=c++11 -std=c++0x
 
-src/JuegoMesa.o: src/JuegoMesa.cpp
-	$(CC) $(CFLAGS) -c src/JuegoMesa.cpp -o src/JuegoMesa.o
+# Directorios de búsqueda de encabezados
+INC_DIR = -I./include
 
-src/Libro.o: src/Libro.cpp
-	$(CC) $(CFLAGS) -c src/Libro.cpp -o src/Libro.o
+# Archivos fuente y objeto
+SRCS = $(wildcard src/*.cpp)
+OBJS = $(SRCS:.cpp=.o) main.o
 
-src/Ninio.o: src/Ninio.cpp
-	$(CC) $(CFLAGS) -c src/Ninio.cpp -o src/Ninio.o
+# Archivos de encabezado
+HEADERS = $(wildcard include/*.h)
+
+# Reglas de compilación
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(INC_DIR) $^ -o $@
+
+%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(INC_DIR) -c $< -o $@
 	
-src/Objeto.o: src/Objeto.cpp
-	$(CC) $(CFLAGS) -c src/Objeto.cpp -o src/Objeto.o
+main.o: main.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(INC_DIR) -c $< -o $@
 
-src/ObjetoRoto.o: src/ObjetoRoto.cpp 
-	$(CC) $(CFLAGS) -c src/ObjetoRoto.cpp -o src/ObjetoRoto.o
-
-
-all: main.o src/JuegoMesa.cpp src/Libro.cpp src/Ninio.cpp src/Objeto.cpp src/ObjetoRoto.cpp
-	$(CC) main.o src/JuegoMesa.cpp src/Libro.cpp src/Ninio.cpp src/Objeto.cpp src/ObjetoRoto.cpp -o programa
-
-.PHONY: clean
 clean:
-	rm -f programa *.o src/*.o
+	rm -f $(OBJS) $(PROG)
+
