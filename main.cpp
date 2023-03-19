@@ -73,7 +73,7 @@ int main() {
             conjuntoObjetosRotos.push_back(obj);
             }
     }
-/*
+
     std::cout << "LISTA OBJETOS PRESTADO NIÑO 1:" << std::endl;
     for (auto it = objetosN1.begin(); it!= objetosN1.end(); it++){
         std::cout << *it << std::endl;
@@ -83,7 +83,12 @@ int main() {
     for (auto it = objetosN2.begin(); it != objetosN2.end(); it++) {
         std::cout << *it << std::endl;
     }
-*/
+
+    std::cout << "LISTA OBJETOS ROTOS:" << std::endl;
+    for (auto it = conjuntoObjetosRotos.begin(); it != conjuntoObjetosRotos.end(); it++) {
+        std::cout << it->getString() << std::endl;
+    }
+
     return 0;
 } 
 

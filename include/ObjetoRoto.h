@@ -14,6 +14,7 @@ class DTObjetoRoto {
         std::string getNombre();
         bool enPrestamo();
         std::string getNinioPrestado();
+        std::string getString();
         ~DTObjetoRoto();
 };
 

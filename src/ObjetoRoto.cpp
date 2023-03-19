@@ -20,6 +20,11 @@ std::string DTObjetoRoto::getNinioPrestado(){
     return this->NombreNinio; 
 }
 
+std::string DTObjetoRoto::getString(){
+    std::string prestado = enPrestamo() ? "SI, " + getNinioPrestado() : "NO";
+    return getNombre() + ", Prestado " + prestado;
+}
+
 DTObjetoRoto::~DTObjetoRoto(){
     
 }
