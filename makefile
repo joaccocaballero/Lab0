@@ -3,7 +3,7 @@
 Clases_CPP = /src
 Clases_H= /include
 
-CLASES_NOMBRES= Objeto Libro JuegoMesa Ninio ObjetoRoto
+CLASES_NOMBRES= Objeto Libro JuegoMesa Ninio
 CLASES_0 = $(CLASES_NOMBRES:%=$(Clases_CPP)/%.o)
 
 CC = g++
