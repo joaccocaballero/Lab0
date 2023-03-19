@@ -1,9 +1,8 @@
 #pragma once
-#ifndef Objeto
-#define Objeto
+#ifndef _OBJETOH
+#define _OBJETOH
 
 #include <string>
-
 #include "Ninio.h"
 
 enum Estado { Nuevo, Bien_Conservado, Roto };
@@ -20,7 +19,9 @@ class Objeto {
         std::string getNombre();
         int getAnio();
         Estado getEstado();
-        ~Objeto();
+        virtual ~Objeto();
 };
+
+
 
 #endif
