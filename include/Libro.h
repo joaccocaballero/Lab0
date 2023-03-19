@@ -12,7 +12,7 @@ class Libro: public Objeto {
 
     public:
         Libro();
-        Libro(std::string Nombre, int anio, Estado estado, std::string Autor, int CantPaginas);
+        Libro(std::string Nombre, int anio, Estado estado, std::string autor, int CantPaginas);
         virtual std::string toString();
         ~Libro();
 };

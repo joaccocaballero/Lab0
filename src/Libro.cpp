@@ -3,8 +3,8 @@
 #include "../include/Libro.h"
 #include "../include/Objeto.h"
 
-Libro::Libro(std::string nombre , int anio, Estado estado, std::string nombre, int CantPaginas): Objeto(nombre, anio, estado) {
-    this->Autor = Autor;
+Libro::Libro(std::string nombre , int anio, Estado estado, std::string autor, int CantPaginas): Objeto(nombre, anio, estado) {
+    this->Autor = autor;
     this->CantPaginas = CantPaginas;
 }
 
