@@ -24,6 +24,10 @@ string Ninio::listarObjetosPrestados() {
     return listaObjetos;
 }
 
+std::string Ninio::getNombre() {
+    return Nombre;
+}
+
 Ninio ::~Ninio(){
     ObjetosPrestados.clear();
     delete ObjetosPrestados;

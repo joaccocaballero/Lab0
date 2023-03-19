@@ -14,10 +14,11 @@ class Ninio {
         int Edad;
         std::string Direccion;
         std::string Telefono;
-        std::set<Objeto> ObjetosPrestados;
+        std::set<Objeto*> ObjetosPrestados;
     public:
         Ninio(std::string Nombre, int Edad, std::string Direccion, std::string Telefono);
-        void addObjeto(Objeto);
+        void addObjeto(Objeto*);
+        std::string getNombre();
         std::set<std::string> *listarObjetosPrestados();
 };
 

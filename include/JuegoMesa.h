@@ -17,6 +17,7 @@ class JuegoMesa : public Objeto {
         Estado getEstado();
         ~JuegoMesa();
         virtual std::string toString();
+        virtual void addNinio(Ninio*);
 };
 
 #endif

@@ -14,6 +14,7 @@ class Libro: public Objeto {
         Libro();
         Libro(std::string Nombre, int anio, Estado estado, std::string autor, int CantPaginas);
         virtual std::string toString();
+        virtual void addNinio(Ninio*);
         ~Libro();
 };
 

@@ -20,6 +20,10 @@ Objeto::getEstado() {
     return this->Estado;
 }
 
+Objeto::addNinio(Ninio *ninio) {
+    this->PrestadoA = ninio;
+}
+
 Objeto::~Objeto() {
     delete PrestadoA;
 }

@@ -19,6 +19,7 @@ class Objeto {
         std::string getNombre();
         int getAnio();
         Estado getEstado();
+        virtual void addNinio(Ninio*);
         virtual ~Objeto();
 };
 
