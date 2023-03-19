@@ -1,6 +1,6 @@
 
-#ifndef DTObjetoRoto
-#define DTObjetoRoto
+#ifndef _DTOBJETOROTOH
+#define _DTOBJETOROTOH
 
 #include <string>
 
@@ -15,6 +15,6 @@ class DTObjetoRoto {
         bool enPrestamo();
         std::string getNinioPrestado();
         ~DTObjetoRoto();
-}
+};
 
 #endif
