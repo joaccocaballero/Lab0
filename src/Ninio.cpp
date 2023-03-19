@@ -1,7 +1,10 @@
-#include <iostream>
-#include <string>
-#include <set>
 #include "../include/Ninio.h"
+
+#include <iostream>
+#include <set>
+#include <string>
+#include <vector>
+
 #include "../include/Objeto.h"
 
 Ninio:: Ninio(std::string Nombre, int Edad, std::string Direccion, std::string Telefono){
@@ -11,15 +14,14 @@ Ninio:: Ninio(std::string Nombre, int Edad, std::string Direccion, std::string T
     this->Telefono= Telefono;
 }
 
-void Ninio::addObjeto(Objeto objeto) {
+void Ninio::addObjeto(Objeto *objeto) {
     ObjetosPrestados.insert(objeto);
 }
 
-string Ninio::listarObjetosPrestados() {
-    std::set<std::string> listaObjetos;
-    for (Objeto*it= ObjetosPrestados.begin(); it != ObjetosPrestados.end() ; ++it) {
-        Objeto* o = *it;
-        listaObjetos.insert(o->toString());
+std::vector<std::string> Ninio::listarObjetosPrestados() {
+    std::vector<std::string> listaObjetos;
+    for (Objeto* it= *ObjetosPrestados.begin(); it != *ObjetosPrestados.end() ; ++it) {
+        listaObjetos.push_back(it->toString());
     }
     return listaObjetos;
 }
@@ -30,6 +32,5 @@ std::string Ninio::getNombre() {
 
 Ninio ::~Ninio(){
     ObjetosPrestados.clear();
-    delete ObjetosPrestados;
 }
 

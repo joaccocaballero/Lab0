@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <set>
+#include <vector>
 #include <string>
 
 class Objeto;
@@ -19,7 +20,8 @@ class Ninio {
         Ninio(std::string Nombre, int Edad, std::string Direccion, std::string Telefono);
         void addObjeto(Objeto*);
         std::string getNombre();
-        std::set<std::string> *listarObjetosPrestados();
+        std::vector<std::string> listarObjetosPrestados();
+        ~Ninio();
 };
 
 #include "Objeto.h"

@@ -8,11 +8,18 @@ Libro::Libro(std::string nombre , int anio, Estado estado, std::string autor, in
     this->CantPaginas = CantPaginas;
 }
 
-Libro::toString() {
-    return 'Libro: ' + getNombre() + ', Año Comprado: ' + getAnio()
-         + ', Estado: ' + getEstado() + ', Autor: ' + this->Autor + ', CantPaginas' + this->CantPaginas; 
+std::string Libro::toString() {
+    return "Libro: " + getNombre() +
+           ", Año Comprado: " + std::to_string(getAnio()) +
+           ", Estado: " + std::to_string(getEstado()) +
+           ", Autor: " + this->Autor + ", CantPaginas" +
+           std::to_string(this->CantPaginas);
 }
 
-Libro::~Libro(){
-    ~Objeto();
+void Libro::addNinio(Ninio *ninio){ 
+     setPrestado(ninio);
+}
+
+Libro::~Libro() {
+
 }

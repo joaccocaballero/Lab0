@@ -3,29 +3,36 @@
 #include <string>
 
 Objeto::Objeto(std::string Nombre, int anio, Estado estado){
-    this->Nombre = nombre;
+    this->Nombre = Nombre;
     this->anio = anio;
     this->estado = estado;
 }
 
-Objeto::getNombre() {
+std::string Objeto::getNombre() {
     return this->Nombre;
 }
 
-Objeto::getAnio() {
-    return this->Anio;
+int Objeto::getAnio() {
+    return this->anio;
 }
 
-Objeto::getEstado() {
-    return this->Estado;
+Estado Objeto::getEstado() {
+    return this->estado;
 }
 
-Objeto::addNinio(Ninio *ninio) {
+
+void Objeto::setPrestado(Ninio *ninio) {
     this->PrestadoA = ninio;
 }
 
-Objeto::getPrestado(){
-    return this->PrestadoA
+
+std::string Objeto::getPrestado(){
+    if(this->PrestadoA != NULL){
+        return PrestadoA->getNombre();
+    }
+    else{
+        return " ";
+    }
 }
 
 Objeto::~Objeto() {

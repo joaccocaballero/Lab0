@@ -4,6 +4,7 @@
 
 #include <string>
 #include "Objeto.h"
+#include "Ninio.h"
 
 class Libro: public Objeto {
     private:
@@ -15,7 +16,7 @@ class Libro: public Objeto {
         Libro(std::string Nombre, int anio, Estado estado, std::string autor, int CantPaginas);
         virtual std::string toString();
         virtual void addNinio(Ninio*);
-        ~Libro();
+        virtual ~Libro();
 };
 
 #endif

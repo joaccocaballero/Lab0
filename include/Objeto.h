@@ -19,7 +19,8 @@ class Objeto {
         std::string getNombre();
         int getAnio();
         Estado getEstado();
-        Ninio getPrestado()
+        std::string getPrestado();
+        void setPrestado(Ninio*);
         virtual void addNinio(Ninio*);
         virtual ~Objeto();
 };

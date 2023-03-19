@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <set>
+#include <vector>
 
 #include "./include/JuegoMesa.h"
 #include "./include/Libro.h"
@@ -13,8 +14,8 @@
 int main() {
     
     std::set<Objeto*> conjuntoObjetos;
-    std:set<DTObjetoRoto*> conjuntoObjetosRotos;
-    std::set<Ninio*> conjuntoNiños;
+    std::vector<DTObjetoRoto> conjuntoObjetosRotos;
+    std::set<Ninio*> conjuntoNinios;
     
     Libro *l1 = new Libro("Nacidos en la bruma: El imperio final", 2022, Roto,"Brandon Senderson", 688);
     conjuntoObjetos.insert(l1);
@@ -40,8 +41,8 @@ int main() {
     
     Ninio *n1 = new Ninio("María Laura",10,"Nueva Palmira 1521","Nueva Palmira 1521");
     Ninio *n2 = new Ninio("Alex",5,"Humberto Primo 1501","29094141");
-    conjuntoNiños.insert(n1);
-    conjuntoNiños.insert(n2);
+    conjuntoNinios.insert(n1);
+    conjuntoNinios.insert(n2);
 
     n1->addObjeto(j2);
     j2->addNinio(n1);
@@ -55,21 +56,18 @@ int main() {
     n2->addObjeto(l3);
     l3->addNinio(n2);
 
-    std::set<std::string> objetosN1 = n1->listarObjetosPrestados();
-    std::set<std::string> objetosN2 = n2->listarObjetosPrestados();
+    std::vector<std::string> objetosN1 = n1->listarObjetosPrestados();
+    std::vector<std::string> objetosN2 = n2->listarObjetosPrestados();
 
-    for (Objeto *it = conjuntoObjetos.begin(); it != conjuntoObjetos.end(); ++it) {
-      Objeto *o = *it;
-        if(o->getEstado() == Roto){
-            std::string nombreObjeto = o->getNombre();
+    for (Objeto *it = *conjuntoObjetos.begin(); it != *conjuntoObjetos.end(); it++) {
+        if(it->getEstado() == Roto){
+            std::string nombreObjeto = it->getNombre();
             bool esPrestado = false;
-            std::string nombreNinio = '';
-            if(o->getPrestamo() != null){
+            if(it->getPrestado() != " "){
                 esPrestado = true;
-                nombreNinio = o->getPrestado()->getNombre();
             }
-            DTObjetoRoto obj = DTObjetoRoto(nombreObjeto, esPrestado, nombreNinio)
-            conjuntoObjetosRotos.insert(obj)
+            DTObjetoRoto obj = DTObjetoRoto(nombreObjeto, esPrestado, it->getPrestado());
+            conjuntoObjetosRotos.push_back(obj);
         }
     }
     /*DTObjetoRoto l1Roto = DTObjetoRoto(l1->getNombre(), true, n1->getNombre());

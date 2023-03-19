@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Objeto.h"
+#include "Ninio.h"
 
 class JuegoMesa : public Objeto {
     private: 
@@ -15,9 +16,9 @@ class JuegoMesa : public Objeto {
         std::string getNombre();
         int getAnio();
         Estado getEstado();
-        ~JuegoMesa();
         virtual std::string toString();
         virtual void addNinio(Ninio*);
+        virtual ~JuegoMesa();
 };
 
 #endif
