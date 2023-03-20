@@ -89,7 +89,7 @@ int main() {
         std::cout << it->getString() << std::endl;
     }
     std::cout << "\n" << std::endl;
-    std::cout << "Salidas tras eliminar:" << std::endl;
+    std::cout << "Salidas tras eliminar Libro: Nacidos en la bruma" << std::endl;
     std::cout << "\n" << std::endl;
 
     conjuntoObjetos.erase(l1);
