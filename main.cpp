@@ -14,7 +14,7 @@
 int main() {
     
     std::set<Objeto*> conjuntoObjetos;
-    std::vector<DTObjetoRoto> conjuntoObjetosRotos;
+    std::vector<DTObjetoRoto> conjuntoObjetosRotos1;
     std::set<Ninio*> conjuntoNinios;
     
     Libro *l1 = new Libro("Nacidos en la bruma: El imperio final", 2022, Roto,"Brandon Senderson", 688);
@@ -38,7 +38,7 @@ int main() {
     std::cout<< j1->toString() <<std::endl;
     std::cout<< j2->toString() <<std::endl;
     std::cout<< j3->toString() <<std::endl;
-    
+    std::cout << "\n" << std::endl;
     Ninio *n1 = new Ninio("María Laura",10,"Nueva Palmira 1521","Nueva Palmira 1521");
     Ninio *n2 = new Ninio("Alex",5,"Humberto Primo 1501","29094141");
 
@@ -62,7 +62,7 @@ int main() {
 
     for (auto it = conjuntoObjetos.begin(); it != conjuntoObjetos.end(); it++) {
         Objeto *o = *it;
-        if (o->getEstado() == Roto) {
+        if (o->getEstado() == 2) {
             std::string nombreObjeto = o->getNombre();
             bool esPrestado = false;
             if (o->getPrestado() != " ") {
@@ -70,7 +70,7 @@ int main() {
             }
             DTObjetoRoto obj =
                 DTObjetoRoto(nombreObjeto, esPrestado, o->getPrestado());
-            conjuntoObjetosRotos.push_back(obj);
+            conjuntoObjetosRotos1.push_back(obj);
             }
     }
 
@@ -78,31 +78,54 @@ int main() {
     for (auto it = objetosN1.begin(); it!= objetosN1.end(); it++){
         std::cout << *it << std::endl;
     }
-
+    std::cout << "\n"<< std::endl;
     std::cout << "LISTA OBJETOS PRESTADO NIÑO 2:" << std::endl;
     for (auto it = objetosN2.begin(); it != objetosN2.end(); it++) {
         std::cout << *it << std::endl;
     }
-
+    std::cout << "\n" << std::endl;
     std::cout << "LISTA OBJETOS ROTOS:" << std::endl;
-    for (auto it = conjuntoObjetosRotos.begin(); it != conjuntoObjetosRotos.end(); it++) {
+    for (auto it = conjuntoObjetosRotos1.begin(); it != conjuntoObjetosRotos1.end(); it++) {
         std::cout << it->getString() << std::endl;
     }
-    
-    l3->~Objeto();
+    std::cout << "\n" << std::endl;
+    std::cout << "Salidas tras eliminar:" << std::endl;
+    std::cout << "\n" << std::endl;
+
+    conjuntoObjetos.erase(l1);
+    l1->~Libro();
+
+    std::vector<std::string> nuevaListaN1 = n1->listarObjetosPrestados();
+    std::vector<std::string> nuevaListaN2 = n2->listarObjetosPrestados();
 
     std::cout << "LISTA OBJETOS PRESTADO NIÑO 1:" << std::endl;
-    for (auto it = objetosN1.begin(); it!= objetosN1.end(); it++){
+    for (auto it = nuevaListaN1.begin(); it != nuevaListaN1.end(); it++) {
         std::cout << *it << std::endl;
     }
 
     std::cout << "LISTA OBJETOS PRESTADO NIÑO 2:" << std::endl;
-    for (auto it = objetosN2.begin(); it != objetosN2.end(); it++) {
+    for (auto it = nuevaListaN2.begin(); it != nuevaListaN2.end(); it++) {
         std::cout << *it << std::endl;
     }
 
+    std::vector<DTObjetoRoto> conjuntoObjetosRotos2;
+    for (auto it = conjuntoObjetos.begin(); it != conjuntoObjetos.end(); it++) {
+        Objeto *o = *it;
+        if (o->getEstado() == 2) {
+            std::string nombreObjeto = o->getNombre();
+            bool esPrestado = false;
+            if (o->getPrestado() != " ") {
+            esPrestado = true;
+            }
+            DTObjetoRoto obj =
+                DTObjetoRoto(nombreObjeto, esPrestado, o->getPrestado());
+            conjuntoObjetosRotos2.push_back(obj);
+        }
+    }
+
+    std::cout << "\n" << std::endl;
     std::cout << "LISTA OBJETOS ROTOS:" << std::endl;
-    for (auto it = conjuntoObjetosRotos.begin(); it != conjuntoObjetosRotos.end(); it++) {
+    for (auto it = conjuntoObjetosRotos2.begin(); it != conjuntoObjetosRotos2.end(); it++) {
         std::cout << it->getString() << std::endl;
     }
     return 0;

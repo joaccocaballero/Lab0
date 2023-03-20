@@ -2,6 +2,7 @@
 #include <string>
 #include "../include/Libro.h"
 #include "../include/Objeto.h"
+#include "../include/Ninio.h"
 
 Libro::Libro(std::string nombre , int anio, Estado estado, std::string autor, int CantPaginas): Objeto(nombre, anio, estado) {
     this->Autor = autor;
@@ -34,5 +35,8 @@ void Libro::addNinio(Ninio *ninio){
 }
 
 Libro::~Libro() {
-  Objeto::~Objeto();
+    if (getPrestadoA() != NULL) {
+      Ninio *n = getPrestadoA();
+      n->borrarLink(this);
+    }
 }

@@ -20,11 +20,13 @@ Estado Objeto::getEstado() {
     return this->estado;
 }
 
-
 void Objeto::setPrestado(Ninio *ninio) {
     this->PrestadoA = ninio;
 }
 
+Ninio *Objeto::getPrestadoA(){
+    return this->PrestadoA;
+}
 
 std::string Objeto::getPrestado(){
     if(this->PrestadoA != NULL){
@@ -36,9 +38,5 @@ std::string Objeto::getPrestado(){
 }
 
 Objeto::~Objeto() {
-    if (PrestadoA != NULL) {
-        std::cout << "adentro" << std::endl;
-        PrestadoA->borrarLink(this);
-        delete PrestadoA;
-    }
+    
 }

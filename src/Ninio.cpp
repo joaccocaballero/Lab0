@@ -29,6 +29,7 @@ std::vector<std::string> Ninio::listarObjetosPrestados() {
 }
 
 void Ninio::borrarLink(Objeto *obj) {
+    std::cout << "erase" << std::endl;
     ObjetosPrestados.erase(obj);
 }
 

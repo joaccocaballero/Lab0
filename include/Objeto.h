@@ -20,6 +20,7 @@ class Objeto {
         int getAnio();
         virtual Estado getEstado();
         std::string getPrestado();
+        Ninio *getPrestadoA();
         void setPrestado(Ninio*);
         virtual void addNinio(Ninio*) = 0;
         virtual ~Objeto();
